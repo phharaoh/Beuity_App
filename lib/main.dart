@@ -1,25 +1,18 @@
+import 'widget/loginScreen.dart';
+import 'widget/onboardingScreen.dart';
 import 'package:flutter/material.dart';
-import 'Welcome_screen.dart';
-import 'buttom_navigation_bar.dart';
-import 'cloud_fairbae_screen.dart';
-import 'beuity.dart';
-import 'package:flutter/material.dart';
-import 'package:pro1/Api_provider/api_provider.dart';
-import 'package:dio/dio.dart';
-import '../models/products_model.dart';
-import 'dart:convert';
-import 'package:pro1/models/products_model.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'Welcome_screen.dart';
-import 'loginScreen.dart';
-import 'onboardingScreen.dart';
+
+
+
+
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

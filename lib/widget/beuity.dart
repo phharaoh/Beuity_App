@@ -1,18 +1,21 @@
-import 'api_Provider.dart';
-import 'dart:developer' show log;
-import '../widget/about app.dart';
+import 'dart:convert';
+import 'dart:developer';
+import 'about app.dart';
+import 'RegisterScreen.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:pro1/SmartPhoneApi/api_model.dart';
+import 'package:pro1/models/products_model.dart';
+import 'package:pro1/Api_provider/api_provider.dart';
 
-class SmartPhoneApi extends StatefulWidget {
-  const SmartPhoneApi({super.key});
+class ProductsApi extends StatefulWidget {
+  ProductsApi({super.key, required String beauty});
 
   @override
-  _SmartPhoneApiState createState() => _SmartPhoneApiState();
+  _ProductsApiState createState() => _ProductsApiState();
 }
 
-class _SmartPhoneApiState extends State<SmartPhoneApi> {
-  Category? productsModel;
+class _ProductsApiState extends State<ProductsApi> {
+  Products? productsModel;
   bool isLoading = true;
 
   int selectedIndix = 0;
@@ -36,18 +39,18 @@ class _SmartPhoneApiState extends State<SmartPhoneApi> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Products",
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+          "beauty",
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         actions: [
           IconButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AboutApp()),
+                  MaterialPageRoute(builder: (context) => const AboutApp()),
                 );
               },
-              icon: Icon(Icons.accessibility)),
+              icon: const Icon(Icons.accessibility)),
           IconButton(
               onPressed: () {
                 Navigator.push(
